@@ -61,9 +61,11 @@ After restoring all the packages, now client app can be published as a **DLL** w
 this command will put all required file inside the **publish** folder and application can be run by using the following commands:   
 **cd publish**
 **dotnet RoadStatus.dll**   
+
 By running the application without any parameter, it should print the **how to use** screen.   
 And  to query one of the road in London etc. A2, you can use the following command:   
 **dotnet RoadStatus.dll A2**   
+
 And this command shows the road status as follows:   
 
 *The status of the A2 as follows   
@@ -86,16 +88,17 @@ The **-r** parameter (stands for **runtime**) defines for which platform **EXE**
 
 So to build for Windows x86 architecture, publish command should be as follows:    
 
-**dotnet publish -c Release -r win-x86 -o ./publish **    
+**dotnet publish -c Release -r win-x86 -o ./publish**    
 
 After creating **EXE** file you don't need prefixing anymore with **dotnet** and can directly run your application:   
-**RoadStatus.dll A2**
+**RoadStatus.EXE A2**     
+
 This command will also generate exactly the same successfull result message.   
 
 If you enter invalid Road name program the **DLL** and **EXE** both will shows an **Not Found** or invalid query result message:   
 *A2aa is not a valid road!*    
 
-and **%errorlevel%** (or **$lastexitcode**) should be **1**    
+and in that case the now the **%errorlevel%** (or **$lastexitcode**) should be **1**    
 
 
 Testing the Application
@@ -105,8 +108,10 @@ For testing XBehave BDD (along with xUnit) used and after changing current direc
 **cd ../../Test-TFLAPIClient**     
 **dotnet restore**      
 **dotnet test**        
+
 Please note; for changing the directory we assume you were in Client Application folder publish and go two folder up and than enter into the Test project folder.       
-Dotnet restore command is also needed for the first time test later you can basically skip it.     
+Dotnet restore command is also needed (if you didn't use in your root solution folder) for the first time test. For later usages you can skip it basically.     
+
 As a final result Test command should generate the following similiar output:     
 
 *Microsoft (R) Test Execution Command Line Tool Version 16.2.0-preview-20190606-02     
