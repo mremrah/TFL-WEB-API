@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TflApiClient": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Projeler\\r&d\\tfl\\TFL-API-Client\\TFLAPIClient\\publish\\RoadStatus.exe",
+      "commandLineArgs": "a2",
+      "workingDirectory": "C:\\Projeler\\r&d\\tfl\\TFL-API-Client\\TFLAPIClient\\publish\\"
+    }
+  }
+}
